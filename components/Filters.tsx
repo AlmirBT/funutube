@@ -15,12 +15,6 @@ const dateOptions = [
 
 const typeOptions: { value: PurchaseType | "all"; label: string }[] = [
   { value: "all", label: "Все разделы" },
-  { value: "privileges", label: "Привилегии" },
-  { value: "promotions", label: "Акции" },
-  { value: "cases", label: "Кейсы" },
-  { value: "tokens", label: "Токены" },
-  { value: "services", label: "Услуги" },
-  { value: "subscription", label: "Подписка" },
 ];
 
 export interface FiltersState {
