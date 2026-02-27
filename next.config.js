@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/funtube",
-  assetPrefix: "/funtube/",
+  basePath: "/funutube",
+  assetPrefix: "/funutube/",
   trailingSlash: true,
 };
 
