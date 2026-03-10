@@ -21,10 +21,10 @@ const statusLabels: Record<PurchaseStatus, string> = {
   failed: "Ошибка",
 };
 const statusStyles: Record<PurchaseStatus, string> = {
-  completed: "bg-[#22C55E]/10 text-[#22C55E]",
+  completed: "bg-[hsl(var(--success))]/10 text-[hsl(var(--success))]",
   pending: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
   refunded: "bg-[hsl(var(--muted))]/15 text-[hsl(var(--muted))]",
-  failed: "bg-[#EF4444]/10 text-[#EF4444]",
+  failed: "bg-[hsl(var(--destructive))]/10 text-[hsl(var(--destructive))]",
 };
 
 interface SideDrawerProps {
@@ -105,7 +105,7 @@ export function SideDrawer({ purchase, onClose }: SideDrawerProps) {
                   className="flex items-center gap-4 rounded-2xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/60 p-4"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-                    <User className="h-6 w-6" strokeWidth={1.8} />
+                    <User className="h-6 w-6" strokeWidth={1.75} />
                   </div>
                   <div>
                     <p className="font-semibold text-[hsl(var(--foreground))]">
@@ -189,7 +189,7 @@ function Row({
       className="flex items-center justify-between rounded-xl border border-[hsl(var(--border))]/60 px-4 py-3"
     >
       <span className="flex items-center gap-2 text-sm text-[hsl(var(--muted))]">
-        <I className="h-4 w-4" strokeWidth={1.8} />
+        <I className="h-4 w-4" strokeWidth={1.75} />
         {label}
       </span>
       <motion.span

@@ -15,7 +15,7 @@ export function OfficialYouTubersList() {
     >
       <div className="border-b border-[hsl(var(--border))]/80 bg-[hsl(var(--surface-muted))]/50 px-6 py-4">
         <h2 className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[hsl(var(--foreground))]">
-          <ShieldCheck className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={2} />
+          <ShieldCheck className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={1.75} />
           Список официальных ютуберов
         </h2>
         <p className="mt-1.5 text-[12px] text-[hsl(var(--muted))]">

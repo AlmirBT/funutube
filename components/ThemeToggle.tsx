@@ -24,9 +24,9 @@ export function ThemeToggle() {
         transition={{ duration: 0.45, ease: [0.32, 0.72, 0.2, 1] }}
       >
         {isDark ? (
-          <Moon className="h-4 w-4" strokeWidth={1.8} />
+          <Moon className="h-4 w-4" strokeWidth={1.75} />
         ) : (
-          <Sun className="h-4 w-4" strokeWidth={1.8} />
+          <Sun className="h-4 w-4" strokeWidth={1.75} />
         )}
       </motion.span>
     </motion.button>

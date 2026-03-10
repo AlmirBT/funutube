@@ -4,10 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { LayoutDashboard, BarChart3, Trophy, Globe, LayoutList, Menu, X } from "lucide-react";
+import { LayoutDashboard, BarChart3, Trophy, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { useDomains } from "./DomainsContext";
-import { domainsData } from "@/lib/mockData";
 
 const nav = [
   { href: "/dashboard", label: "Дашборд", icon: LayoutDashboard },
@@ -17,7 +15,6 @@ const nav = [
 
 export function Sidebar() {
   const pathname = usePathname();
-  const { openDomain, openAllDomains } = useDomains();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -82,47 +79,6 @@ export function Sidebar() {
     </nav>
   );
 
-  const DomainsBlock = () => (
-    <div className="mx-4 mb-4 rounded-2xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/60 p-3">
-      <div className="mb-2 flex items-center gap-2 px-2 py-1">
-        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-          <Globe className="h-4 w-4" strokeWidth={2} />
-        </span>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[hsl(var(--muted))]">
-          Домены
-        </span>
-      </div>
-      <button
-        type="button"
-        onClick={() => {
-          openAllDomains();
-          setMobileMenuOpen(false);
-        }}
-        className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-[hsl(var(--foreground))] transition-colors hover:bg-[hsl(var(--surface))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/30"
-      >
-        <LayoutList className="h-4 w-4 shrink-0 text-[hsl(var(--muted))]" />
-        Все домены
-      </button>
-      <ul className="scrollbar-premium mt-1 max-h-[220px] overflow-y-auto">
-        {domainsData.slice(0, 8).map((d) => (
-          <li key={d.domain}>
-            <button
-              type="button"
-              onClick={() => {
-                openDomain(d.domain);
-                setMobileMenuOpen(false);
-              }}
-              className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-[13px] text-[hsl(var(--muted))] transition-colors hover:bg-[hsl(var(--surface))] hover:text-[hsl(var(--foreground))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/30"
-            >
-              <Globe className="h-3.5 w-3.5 shrink-0" />
-              <span className="truncate font-mono text-[12px]">{d.domain}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
   return (
     <>
       <aside className="scrollbar-premium fixed left-0 top-0 z-40 flex hidden h-screen w-[260px] flex-col overflow-y-auto border-r border-[hsl(var(--border))]/70 bg-[hsl(var(--surface))]/85 backdrop-blur-xl transition-colors duration-300 md:flex">
@@ -140,8 +96,7 @@ export function Sidebar() {
           <NavLinks />
         </div>
         <div className="shrink-0 border-t border-[hsl(var(--border))]/70">
-          <DomainsBlock />
-          <div className="border-t border-[hsl(var(--border))]/70 p-4">
+          <div className="p-4">
             <ThemeToggle />
           </div>
         </div>
@@ -165,7 +120,7 @@ export function Sidebar() {
             aria-label="Открыть меню"
             whileTap={{ scale: 0.95 }}
           >
-            <Menu className="h-5 w-5" strokeWidth={2} />
+            <Menu className="h-5 w-5" strokeWidth={1.75} />
           </motion.button>
         </div>
       </header>
@@ -202,12 +157,11 @@ export function Sidebar() {
                   aria-label="Закрыть меню"
                   whileTap={{ scale: 0.95 }}
                 >
-                  <X className="h-5 w-5" strokeWidth={2} />
+                  <X className="h-5 w-5" strokeWidth={1.75} />
                 </motion.button>
               </div>
               <div className="flex flex-1 flex-col overflow-y-auto">
                 <NavLinks layoutId="sidebar-active-mobile" />
-                <DomainsBlock />
                 <div className="mt-auto border-t border-[hsl(var(--border))]/80 p-4">
                   <ThemeToggle />
                 </div>

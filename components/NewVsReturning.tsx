@@ -20,7 +20,7 @@ export function NewVsReturning() {
       aria-label="Новые и возвращающиеся покупатели"
     >
       <div className="mb-4 flex items-center gap-2">
-        <Users className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={2} />
+        <Users className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={1.75} />
         <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[hsl(var(--muted))]">
           Новые vs Возвращающиеся
         </h3>

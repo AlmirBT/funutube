@@ -13,8 +13,6 @@ import { SideDrawer } from "@/components/SideDrawer";
 import { PurchasesReport } from "@/components/PurchasesReport";
 import {
   kpiStats,
-  kpiSparklines,
-  kpiContext,
   purchases,
 } from "@/lib/mockData";
 import type { FiltersState } from "@/components/Filters";
@@ -78,10 +76,6 @@ export default function DashboardPage() {
               Ключевые метрики канала, продажи и активность аудитории в одном месте.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="chip">Обновлено сегодня</span>
-            <span className="chip">Период: сутки</span>
-          </div>
         </header>
 
         <section className="mb-10" aria-label="Ваш доход за сегодня">
@@ -92,7 +86,7 @@ export default function DashboardPage() {
         </section>
 
         <section
-          className="mb-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mb-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
           aria-label="Доход по периодам"
         >
           <StatCard
@@ -101,16 +95,12 @@ export default function DashboardPage() {
             value={formatRubles(kpiStats.revenueToday)}
             delta={kpiStats.revenueTodayDelta}
             icon={DollarSign}
-            sparklineData={kpiSparklines.today}
-            contextText={kpiContext.today}
           />
           <StatCard
             index={1}
             title="Доход за вчера (в это же время)"
             value={formatRubles(kpiStats.revenueYesterdaySameTime)}
             icon={Calendar}
-            sparklineData={kpiSparklines.yesterday}
-            contextText={kpiContext.yesterday}
           />
           <StatCard
             index={2}
@@ -118,8 +108,6 @@ export default function DashboardPage() {
             value={formatRubles(kpiStats.revenueThisWeek)}
             delta={kpiStats.revenueThisWeekDelta}
             icon={TrendingUp}
-            sparklineData={kpiSparklines.week}
-            contextText={kpiContext.week}
           />
           <StatCard
             index={3}
@@ -127,47 +115,45 @@ export default function DashboardPage() {
             value={formatRubles(kpiStats.revenueThisMonth)}
             delta={kpiStats.revenueThisMonthDelta}
             icon={CalendarDays}
-            sparklineData={kpiSparklines.month}
-            contextText={kpiContext.month}
           />
         </section>
 
-        <section className="mb-8" aria-label="Фильтры">
+        <section className="mb-6" aria-label="Фильтры">
           <Filters filters={filters} onFiltersChange={setFilters} />
         </section>
 
-        <section className="mb-12" aria-label="График с аналитикой">
+        <section className="mb-10" aria-label="График с аналитикой">
           <RevenueChart filters={filters} />
         </section>
 
-        <section className="mb-12" aria-label="Топ-аналитика">
+        <section className="mb-10" aria-label="Топ-аналитика">
           <TopAnalytics />
         </section>
 
-        <section className="mb-8" aria-label="Отчёт по покупкам">
+        <section className="mb-6" aria-label="Отчёт по покупкам">
           <PurchasesReport purchases={purchasesInPeriod} filters={filters} />
         </section>
 
-        <section className="mb-12" aria-label="Список покупок">
+        <section className="mb-10" aria-label="Список покупок">
           <div className="mb-4 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-sm font-medium tracking-tight text-[hsl(var(--muted))]">
+              <h2 className="text-base font-semibold tracking-tight text-[hsl(var(--muted))]">
                 Список покупок
               </h2>
               <p className="mt-1 text-xs text-[hsl(var(--muted))]">
-                Поиск по нику или имени
+                Поиск по никнейму
               </p>
             </div>
             <div className="w-full max-w-sm">
               <label htmlFor="purchase-search" className="sr-only">
-                Поиск по нику
+                Поиск по никнейму
               </label>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[hsl(var(--muted))]" />
                 <input
                   id="purchase-search"
                   type="search"
-                  placeholder="Ник или имя игрока..."
+                  placeholder="Никнейм игрока..."
                   value={filters.search}
                   onChange={(e) => handleSearchChange(e.target.value)}
                   className="w-full rounded-full border border-[hsl(var(--border))]/80 bg-[hsl(var(--surface))] py-2.5 pl-10 pr-10 text-[13px] font-medium text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted))] transition-all duration-300 ease-out focus:border-[hsl(var(--accent))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/20 hover:border-[hsl(var(--border))]"

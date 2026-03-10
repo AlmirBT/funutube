@@ -9,14 +9,14 @@ const hints = [
     type: "positive" as const,
     icon: TrendingUp,
     text: "Сегодня доход выше среднего на 18%",
-    className: "text-[#22C55E]",
+    className: "text-[hsl(var(--success))]",
   },
   {
     id: "subs",
     type: "negative" as const,
     icon: AlertCircle,
     text: "Активность подписок снизилась после 20:00",
-    className: "text-[#EF4444]",
+    className: "text-[hsl(var(--destructive))]",
   },
   {
     id: "domain",
@@ -51,7 +51,7 @@ export function Insights() {
               className="flex items-center gap-2 text-[13px] font-medium text-[hsl(var(--foreground))]"
             >
               <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--surface-muted))] ${h.className}`}>
-                <Icon className="h-3.5 w-3.5" strokeWidth={2} />
+                <Icon className="h-3.5 w-3.5" strokeWidth={1.75} />
               </span>
               {h.text}
             </motion.li>

@@ -35,7 +35,7 @@ export function RevenueByTimeOfDay() {
     >
       <div className="mb-6 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))] shadow-[0_0_16px_-8px_hsl(var(--accent)/0.35)]">
-          <Clock className="h-5 w-5" strokeWidth={2} />
+          <Clock className="h-5 w-5" strokeWidth={1.75} />
         </div>
         <div>
           <h2 className="text-base font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -90,7 +90,7 @@ export function RevenueByTimeOfDay() {
         ))}
       </div>
       {bestKey === "evening" && (
-        <p className="mt-4 rounded-xl bg-[#22C55E]/10 px-4 py-2 text-sm font-medium text-[#22C55E]">
+        <p className="mt-4 rounded-xl bg-[hsl(var(--success))]/10 px-4 py-2 text-sm font-medium text-[hsl(var(--success))]">
           💡 Ролики лучше выпускать вечером (18–24) — пик покупок
         </p>
       )}

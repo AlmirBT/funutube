@@ -19,7 +19,7 @@ export function LevelProgress() {
     >
       <div className="flex items-center gap-3">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-          <Flame className="h-4 w-4" strokeWidth={2} />
+          <Flame className="h-4 w-4" strokeWidth={1.75} />
         </div>
         <div>
           <h3 className="text-sm font-semibold tracking-tight text-[hsl(var(--foreground))]">

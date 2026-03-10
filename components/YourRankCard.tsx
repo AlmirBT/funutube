@@ -26,7 +26,7 @@ export function YourRankCard() {
       <div className="flex flex-wrap items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))]">
-            <Medal className="h-7 w-7" strokeWidth={2} />
+            <Medal className="h-7 w-7" strokeWidth={1.75} />
           </div>
           <div>
             <h2 className="text-lg font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -54,7 +54,7 @@ export function YourRankCard() {
             <p className="text-[11px] font-medium uppercase tracking-wider text-[hsl(var(--muted))]">
               Конверсия
             </p>
-            <p className="mt-1 text-xl font-bold tabular-nums text-emerald-500">
+            <p className="mt-1 text-xl font-bold tabular-nums text-[hsl(var(--success))]">
               {myStats.conversion}%
             </p>
           </div>

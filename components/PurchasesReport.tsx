@@ -22,7 +22,7 @@ export function PurchasesReport({ filters: _filters }: PurchasesReportProps) {
     <motion.section
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: 0.05 }}
+      transition={{ duration: 0.4, delay: 0.05, ease: [0.32, 0.72, 0.2, 1] }}
       className="grid gap-4 sm:grid-cols-3"
       aria-label="Отчёт по покупкам"
     >
@@ -35,7 +35,7 @@ export function PurchasesReport({ filters: _filters }: PurchasesReportProps) {
           className="card-surface flex items-center gap-4 p-5 transition-all duration-300 hover:shadow-glow-subtle"
         >
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-            <card.icon className="h-5 w-5" strokeWidth={2} />
+            <card.icon className="h-5 w-5" strokeWidth={1.75} />
           </span>
           <div className="min-w-0">
             <p className="text-[12px] font-medium uppercase tracking-wider text-[hsl(var(--muted))]">
@@ -45,7 +45,7 @@ export function PurchasesReport({ filters: _filters }: PurchasesReportProps) {
               {card.value}
             </p>
             {card.delta != null && (
-              <p className="mt-0.5 text-xs font-medium text-emerald-500">
+              <p className="mt-0.5 text-xs font-medium text-[hsl(var(--success))]">
                 +{card.delta}%
               </p>
             )}

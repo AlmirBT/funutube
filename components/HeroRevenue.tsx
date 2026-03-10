@@ -30,7 +30,7 @@ export function HeroRevenue({ value, deltaPercent }: HeroRevenueProps) {
     <motion.section
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, ease: [0.32, 0.72, 0.2, 1] }}
+      transition={{ duration: 0.55, ease: [0.32, 0.72, 0.2, 1] }}
       className="card-surface px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 transition-shadow duration-500 hover:shadow-glow dark:hover:shadow-glow-dark"
     >
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))]/16 via-transparent to-[hsl(var(--accent-dark))]/12" />
@@ -56,9 +56,9 @@ export function HeroRevenue({ value, deltaPercent }: HeroRevenueProps) {
           transition={{ delay: 0.35, duration: 0.5, ease: [0.32, 0.72, 0.2, 1] }}
           className={`mt-3 inline-flex items-center gap-1.5 text-sm font-semibold tabular-nums sm:text-base ${
             isPositive
-              ? "text-emerald-500"
+              ? "text-[hsl(var(--success))]"
               : isNegative
-                ? "text-rose-500"
+                ? "text-[hsl(var(--destructive))]"
                 : "text-amber-600 dark:text-amber-400"
           }`}
         >

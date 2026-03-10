@@ -14,7 +14,7 @@ export function Achievements() {
       aria-label="Достижения"
     >
       <div className="mb-4 flex items-center gap-2">
-        <Award className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={2} />
+        <Award className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={1.75} />
         <h3 className="text-[11px] font-semibold uppercase tracking-wider text-[hsl(var(--muted))]">
           Достижения
         </h3>
@@ -27,13 +27,13 @@ export function Achievements() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.15 + i * 0.05 }}
             className={`flex items-center gap-3 rounded-xl px-3 py-2.5 ${
-              a.unlocked ? "bg-[#22C55E]/10" : "bg-[hsl(var(--surface-muted))]/50 opacity-70"
+              a.unlocked ? "bg-[hsl(var(--success))]/10" : "bg-[hsl(var(--surface-muted))]/50 opacity-70"
             }`}
           >
             {a.unlocked ? (
               <span className="text-lg" aria-hidden>🏅</span>
             ) : (
-              <Lock className="h-4 w-4 shrink-0 text-[hsl(var(--muted))]" strokeWidth={2} />
+              <Lock className="h-4 w-4 shrink-0 text-[hsl(var(--muted))]" strokeWidth={1.75} />
             )}
             <span className={`text-sm font-medium ${a.unlocked ? "text-[hsl(var(--foreground))]" : "text-[hsl(var(--muted))]"}`}>
               {a.title}

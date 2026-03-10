@@ -23,10 +23,10 @@ const statusLabels: Record<PurchaseStatus, string> = {
   failed: "Ошибка",
 };
 const statusStyles: Record<PurchaseStatus, string> = {
-  completed: "bg-[#22C55E]/10 text-[#22C55E]",
+  completed: "bg-[hsl(var(--success))]/10 text-[hsl(var(--success))]",
   pending: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
   refunded: "bg-[hsl(var(--muted))]/15 text-[hsl(var(--muted))]",
-  failed: "bg-[#EF4444]/10 text-[#EF4444]",
+  failed: "bg-[hsl(var(--destructive))]/10 text-[hsl(var(--destructive))]",
 };
 
 interface PurchasesTableProps {
@@ -177,7 +177,7 @@ export function PurchasesTable({
           <button
             type="button"
             onClick={onShowDemo}
-            className="mt-4 rounded-full bg-[hsl(var(--accent))] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+            className="mt-4 rounded-full bg-[hsl(var(--accent))] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/30 focus:ring-offset-2"
           >
             Посмотреть демо-данные
           </button>
@@ -195,7 +195,7 @@ export function PurchasesTable({
     >
       <div className="scrollbar-premium overflow-x-auto overflow-y-visible">
         <table className="w-full min-w-[640px] border-collapse text-[13px]">
-          <thead className="sticky top-0 z-10 bg-[hsl(var(--surface-muted))]/85 backdrop-blur-md">
+          <thead className="sticky top-0 z-10 bg-[hsl(var(--surface-muted))]/85 dark:bg-[hsl(var(--surface-muted))]/95 backdrop-blur-md">
             <tr className="border-b border-[hsl(var(--border))]/80 bg-[hsl(var(--surface-muted))]/50">
               <Th label="Дата покупки" sortKey="date" align="left" className="px-6 py-4" />
               <Th label="Игровой ник" sortKey="username" className="px-6 py-4" />
@@ -236,7 +236,7 @@ export function PurchasesTable({
                     <td className="px-6 py-4 text-[13px] text-[hsl(var(--muted))]">
                       {row.domain}
                     </td>
-                    <td className="px-6 py-4 text-[hsl(var(--foreground))]">
+                    <td className="px-6 py-4 font-medium text-[hsl(var(--foreground))]">
                       {typeLabels[row.type]}
                     </td>
                     <td className="px-6 py-4 text-right font-semibold tabular-nums text-[hsl(var(--accent))]">

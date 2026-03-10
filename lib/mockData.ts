@@ -1,3 +1,9 @@
+export type UserRole = "admin" | "youtuber";
+export const currentUser = {
+  role: "youtuber" as UserRole,
+  domains: ["fonix.funtime.su"],
+};
+
 export type PurchaseType = "privileges" | "promotions" | "cases" | "tokens" | "services" | "subscription";
 export type PurchaseStatus = "completed" | "pending" | "refunded" | "failed";
 

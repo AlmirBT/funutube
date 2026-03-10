@@ -15,8 +15,8 @@ export function RevenueForecast() {
       aria-label="Прогноз дохода"
     >
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--surface-muted))] text-emerald-500">
-          <TrendingUp className="h-4 w-4" strokeWidth={2} />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--surface-muted))] text-[hsl(var(--success))]">
+          <TrendingUp className="h-4 w-4" strokeWidth={1.75} />
         </div>
         <div>
           <h3 className="text-sm font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -40,7 +40,7 @@ export function RevenueForecast() {
           <p className="text-xs font-medium text-[hsl(var(--muted))]">
             За неделю
           </p>
-          <p className="mt-1 text-xl font-semibold tabular-nums tracking-tight text-emerald-500">
+          <p className="mt-1 text-xl font-semibold tabular-nums tracking-tight text-[hsl(var(--success))]">
             {formatRubles(revenueForecast.week)}
           </p>
         </div>

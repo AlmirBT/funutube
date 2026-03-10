@@ -21,7 +21,7 @@ export function WhatToDoNext() {
     >
       <div className="mb-6 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/20 text-[hsl(var(--accent))]">
-          <Target className="h-5 w-5" strokeWidth={2} />
+          <Target className="h-5 w-5" strokeWidth={1.75} />
         </div>
         <div>
           <h2 className="text-lg font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -44,7 +44,7 @@ export function WhatToDoNext() {
               className="flex items-start gap-4 rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface))]/80 p-4"
             >
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-                <Icon className="h-4 w-4" strokeWidth={2} />
+                <Icon className="h-4 w-4" strokeWidth={1.75} />
               </div>
               <div>
                 <p className="font-semibold text-[hsl(var(--foreground))]">{r.title}</p>

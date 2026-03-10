@@ -101,9 +101,9 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
               <div className="flex min-w-0 items-center gap-4">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent))]/20 to-[hsl(var(--accent-dark))]/12 text-[hsl(var(--accent))] shadow-[0_0_24px_-10px_hsl(var(--accent)/0.45)]">
                   {youtuber.isOfficial ? (
-                    <Crown className="h-7 w-7" strokeWidth={2} />
+                    <Crown className="h-7 w-7" strokeWidth={1.75} />
                   ) : (
-                    <BarChart3 className="h-7 w-7" strokeWidth={2} />
+                    <BarChart3 className="h-7 w-7" strokeWidth={1.75} />
                   )}
                 </div>
                 <div className="min-w-0">
@@ -135,7 +135,7 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
           <div className="scrollbar-premium flex-1 overflow-y-auto">
             <div className="border-b border-[hsl(var(--border))]/60 px-6 py-6">
               <h3 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[hsl(var(--muted))]">
-                <BarChart3 className="h-4 w-4" strokeWidth={2} />
+                <BarChart3 className="h-4 w-4" strokeWidth={1.75} />
                 Подробная статистика
               </h3>
               <div className="space-y-3">
@@ -151,7 +151,7 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
                       className="flex items-center justify-between rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/70 px-4 py-3"
                     >
                       <span className="flex items-center gap-2.5 text-sm text-[hsl(var(--muted))]">
-                        <Icon className="h-4 w-4 text-[hsl(var(--accent))]/80" strokeWidth={2} />
+                        <Icon className="h-4 w-4 text-[hsl(var(--accent))]/80" strokeWidth={1.75} />
                         {label}
                       </span>
                       <span className="font-semibold tabular-nums text-[hsl(var(--foreground))]">
@@ -167,7 +167,7 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
                   className="flex items-center justify-between rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/70 px-4 py-3"
                 >
                   <span className="flex items-center gap-2.5 text-sm text-[hsl(var(--muted))]">
-                    <Wallet className="h-4 w-4 text-[hsl(var(--accent))]/80" strokeWidth={2} />
+                    <Wallet className="h-4 w-4 text-[hsl(var(--accent))]/80" strokeWidth={1.75} />
                     Средний чек
                   </span>
                   <span className="font-semibold tabular-nums text-[hsl(var(--foreground))]">
@@ -179,7 +179,7 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
 
             <div className="px-6 py-6">
               <h3 className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[hsl(var(--muted))]">
-                <GitCompare className="h-4 w-4" strokeWidth={2} />
+                <GitCompare className="h-4 w-4" strokeWidth={1.75} />
                 Сравнение с вами
               </h3>
               <div className="space-y-3">
@@ -210,13 +210,13 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
                         </div>
                         <div className="flex shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--surface))]/90 px-2.5 py-1">
                           {youWin && (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-[#22C55E]">
+                            <span className="flex items-center gap-1 text-xs font-semibold text-[hsl(var(--success))]">
                               <TrendingUp className="h-3.5 w-3.5" />
                               +{diff.toFixed(0)}%
                             </span>
                           )}
                           {theyWin && (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-[#EF4444]">
+                            <span className="flex items-center gap-1 text-xs font-semibold text-[hsl(var(--destructive))]">
                               <TrendingDown className="h-3.5 w-3.5" />
                               {diff.toFixed(0)}%
                             </span>
@@ -259,14 +259,14 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
                         const diff = diffPercent(myAvgCheck, theirAvgCheck);
                         if (diff > 0)
                           return (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-[#22C55E]">
+                            <span className="flex items-center gap-1 text-xs font-semibold text-[hsl(var(--success))]">
                               <TrendingUp className="h-3.5 w-3.5" />
                               +{diff.toFixed(0)}%
                             </span>
                           );
                         if (diff < 0)
                           return (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-[#EF4444]">
+                            <span className="flex items-center gap-1 text-xs font-semibold text-[hsl(var(--destructive))]">
                               <TrendingDown className="h-3.5 w-3.5" />
                               {diff.toFixed(0)}%
                             </span>
@@ -295,7 +295,7 @@ export function YouTuberDetailDrawer({ youtuber, onClose }: YouTuberDetailDrawer
                 href={`/dashboard/analytics?user=${youtuber.id}&compare=1`}
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-[hsl(var(--accent))]/40 bg-[hsl(var(--accent))]/10 py-3.5 text-sm font-semibold text-[hsl(var(--accent))] transition-all duration-200 hover:bg-[hsl(var(--accent))]/15 hover:border-[hsl(var(--accent))]/60 hover:shadow-glow-subtle"
               >
-                <GitCompare className="h-4 w-4" strokeWidth={2} />
+                <GitCompare className="h-4 w-4" strokeWidth={1.75} />
                 Полное сравнение на странице аналитики
               </Link>
             </div>

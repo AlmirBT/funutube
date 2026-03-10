@@ -90,7 +90,7 @@ export function YouTubersLeaderboard() {
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))] shadow-[0_0_16px_-8px_hsl(var(--accent)/0.45)]">
-            <Trophy className="h-5 w-5" strokeWidth={2} />
+            <Trophy className="h-5 w-5" strokeWidth={1.75} />
           </div>
           <div>
             <h2 className="text-lg font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -228,7 +228,7 @@ export function YouTubersLeaderboard() {
                   <td className="min-w-[140px] px-4 py-3.5 text-left align-middle">
                     {isYou ? (
                       <span className="flex items-center gap-2 font-medium text-[hsl(var(--foreground))]">
-                        <User className="h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={2} />
+                        <User className="h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={1.75} />
                         {u.name}
                       </span>
                     ) : (
@@ -237,7 +237,7 @@ export function YouTubersLeaderboard() {
                         onClick={() => setSelectedYouTuber(u)}
                         className="flex w-full items-center gap-2 rounded-lg px-1 py-0.5 -mx-1 text-left font-medium text-[hsl(var(--foreground))] transition-colors hover:text-[hsl(var(--accent))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/30 focus:ring-offset-1"
                       >
-                        {u.isOfficial && <Crown className="h-3.5 w-3.5 shrink-0 text-amber-500" strokeWidth={2} />}
+                        {u.isOfficial && <Crown className="h-3.5 w-3.5 shrink-0 text-amber-500" strokeWidth={1.75} />}
                         {u.name}
                       </button>
                     )}

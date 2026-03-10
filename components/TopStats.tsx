@@ -31,7 +31,7 @@ function TopDomainsByRevenue() {
     >
       <div className="mb-6 flex items-center gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--accent))] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
-          <DollarSign className="h-7 w-7" strokeWidth={2} />
+          <DollarSign className="h-7 w-7" strokeWidth={1.75} />
         </div>
         <div>
           <h3 className="text-base font-bold tracking-tight text-[hsl(var(--foreground))] sm:text-lg">
@@ -79,7 +79,7 @@ function TopDomainsByPlayers() {
     >
       <div className="mb-6 flex items-center gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--accent))] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
-          <Users className="h-7 w-7" strokeWidth={2} />
+          <Users className="h-7 w-7" strokeWidth={1.75} />
         </div>
         <div>
           <h3 className="text-base font-bold tracking-tight text-[hsl(var(--foreground))] sm:text-lg">
@@ -127,7 +127,7 @@ function TopPlayersBySpent() {
     >
       <div className="mb-6 flex items-center gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--accent))] text-white shadow-lg shadow-[hsl(var(--accent))]/30">
-          <Trophy className="h-7 w-7" strokeWidth={2} />
+          <Trophy className="h-7 w-7" strokeWidth={1.75} />
         </div>
         <div>
           <h3 className="text-base font-bold tracking-tight text-[hsl(var(--foreground))] sm:text-lg">

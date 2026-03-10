@@ -36,7 +36,7 @@ export function TopPromoCodes() {
       className="card-surface p-6 transition-shadow duration-300 ease-out hover:shadow-soft-lg"
     >
       <div className="mb-5 flex items-center gap-2">
-        <Ticket className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={2} />
+        <Ticket className="h-4 w-4 text-[hsl(var(--accent))]" strokeWidth={1.75} />
         <h3 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--muted))]">
           Игроков по доменам
         </h3>
@@ -60,7 +60,7 @@ export function TopPromoCodes() {
                   i === 0 ? "bg-[hsl(var(--accent))] text-white" : "bg-[hsl(var(--surface-muted))] text-[hsl(var(--muted))]"
                 }`}
               >
-                <Globe className="h-5 w-5" strokeWidth={2} />
+                <Globe className="h-5 w-5" strokeWidth={1.75} />
               </div>
               <div className="min-w-0 flex-1">
                 <p className={`font-semibold ${i === 0 ? "text-[hsl(var(--accent))]" : "text-[hsl(var(--foreground))]"}`}>

@@ -101,7 +101,7 @@ function SingleDomainContent({ main, current }: { main: DomainStats; current: Do
     >
       <div className="flex items-center gap-4 rounded-2xl bg-[hsl(var(--accent))]/12 p-5 ring-1 ring-[hsl(var(--accent))]/25">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--accent))] text-white">
-          <Globe className="h-7 w-7" strokeWidth={2} />
+          <Globe className="h-7 w-7" strokeWidth={1.75} />
         </div>
         <div>
           <p className="font-mono text-lg font-bold tracking-tight text-[hsl(var(--foreground))]">
@@ -214,7 +214,7 @@ function StatBlock({
   return (
     <div className={`rounded-2xl border p-4 ${accent ? "border-[hsl(var(--accent))]/30 bg-[hsl(var(--accent))]/8" : "border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/40"}`}>
       <div className="flex items-center gap-2 text-[12px] font-medium uppercase tracking-wider text-[hsl(var(--muted))]">
-        <Icon className="h-4 w-4" strokeWidth={2} />
+        <Icon className="h-4 w-4" strokeWidth={1.75} />
         {label}
       </div>
       <p className={`mt-2 text-xl font-bold tabular-nums ${accent ? "text-[hsl(var(--accent))]" : "text-[hsl(var(--foreground))]"}`}>

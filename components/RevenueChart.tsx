@@ -17,14 +17,13 @@ import { getRangeMSK, isDateInRange } from "@/lib/dateUtils";
 import type { FiltersState } from "@/components/Filters";
 import { usdToRub, formatRubles } from "@/lib/currency";
 
-type Metric = "revenue" | "purchases" | "newPlayers" | "totalUsersPassed" | "usersOnline";
+type Metric = "revenue" | "purchases" | "newPlayers" | "totalUsersPassed";
 
 const metricLabels: Record<Metric, string> = {
   revenue: "Доход",
   purchases: "Покупки",
   newPlayers: "Новые игроки",
   totalUsersPassed: "Всего игроков прошло",
-  usersOnline: "Игроков онлайн",
 };
 
 const formatTooltip = (value: number, metric: Metric) => {
@@ -39,7 +38,7 @@ interface RevenueChartProps {
 export function RevenueChart({ filters }: RevenueChartProps) {
   const [metric, setMetric] = useState<Metric>("revenue");
 
-  const metrics: Metric[] = ["revenue", "purchases", "newPlayers", "totalUsersPassed", "usersOnline"];
+  const metrics: Metric[] = ["revenue", "purchases", "newPlayers", "totalUsersPassed"];
 
   const data = useMemo(() => {
     const range = filters
@@ -65,9 +64,7 @@ export function RevenueChart({ filters }: RevenueChartProps) {
         ? "purchases"
         : metric === "newPlayers"
           ? "newPlayers"
-          : metric === "totalUsersPassed"
-            ? "totalUsersPassed"
-            : "usersOnline";
+          : "totalUsersPassed";
 
   const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: Array<{ payload: unknown }>; label?: string }) => {
     if (!active || !payload?.length || !label) return null;
@@ -80,9 +77,7 @@ export function RevenueChart({ filters }: RevenueChartProps) {
           ? p.purchases
           : metric === "newPlayers"
             ? p.newPlayers
-            : metric === "totalUsersPassed"
-              ? p.totalUsersPassed
-              : p.usersOnline;
+            : p.totalUsersPassed;
     return (
       <div className="rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--surface-elevated))] px-4 py-3 shadow-soft-lg dark:shadow-soft-dark-lg">
         <p className="mb-2 text-xs font-medium text-[hsl(var(--muted))]">{dateLabel}</p>
@@ -114,10 +109,10 @@ export function RevenueChart({ filters }: RevenueChartProps) {
               type="button"
               onClick={() => setMetric(m)}
               whileTap={{ scale: 0.98 }}
-              className={`rounded-full px-3.5 py-2 text-[13px] font-semibold transition-all duration-300 ${
+              className={`pill-button ${
                 metric === m
-                  ? "bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] shadow-[0_0_18px_-8px_hsl(var(--accent)/0.5)]"
-                  : "bg-[hsl(var(--surface-muted))]/70 text-[hsl(var(--muted))] hover:bg-[hsl(var(--surface-muted))] hover:text-[hsl(var(--foreground))]"
+                  ? "pill-button-active"
+                  : "pill-button-inactive"
               }`}
             >
               {metricLabels[m]}

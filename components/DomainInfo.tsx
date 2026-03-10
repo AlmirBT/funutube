@@ -34,7 +34,7 @@ export function DomainInfo() {
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[hsl(var(--accent))]/12 text-[hsl(var(--accent))]">
-            <Globe className="h-4 w-4" strokeWidth={2} />
+            <Globe className="h-4 w-4" strokeWidth={1.75} />
           </div>
           <div>
             <h3 className="text-sm font-semibold tracking-tight text-[hsl(var(--foreground))]">
@@ -56,14 +56,14 @@ export function DomainInfo() {
             className="rounded-lg p-1.5 text-[hsl(var(--muted))] transition-colors hover:bg-[hsl(var(--border))]/50 hover:text-[hsl(var(--foreground))]"
             aria-label="Скопировать домен"
           >
-            {copied ? <Check className="h-4 w-4 text-[#22C55E]" /> : <Copy className="h-4 w-4" />}
+            {copied ? <Check className="h-4 w-4 text-[hsl(var(--success))]" /> : <Copy className="h-4 w-4" />}
           </motion.button>
         </div>
       </div>
 
       <ul className="mt-5 grid gap-3 sm:grid-cols-3">
         <li className="flex items-start gap-3 rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/50 px-4 py-3">
-          <Server className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={2} />
+          <Server className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={1.75} />
           <div>
             <p className="text-xs font-semibold text-[hsl(var(--foreground))]">Трафик по домену</p>
             <p className="mt-0.5 text-[12px] text-[hsl(var(--muted))]">
@@ -72,7 +72,7 @@ export function DomainInfo() {
           </div>
         </li>
         <li className="flex items-start gap-3 rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/50 px-4 py-3">
-          <Globe className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={2} />
+          <Globe className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={1.75} />
           <div>
             <p className="text-xs font-semibold text-[hsl(var(--foreground))]">Регистрации</p>
             <p className="mt-0.5 text-[12px] text-[hsl(var(--muted))]">
@@ -81,7 +81,7 @@ export function DomainInfo() {
           </div>
         </li>
         <li className="flex items-start gap-3 rounded-xl border border-[hsl(var(--border))]/60 bg-[hsl(var(--surface-muted))]/50 px-4 py-3">
-          <CreditCard className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={2} />
+          <CreditCard className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--accent))]" strokeWidth={1.75} />
           <div>
             <p className="text-xs font-semibold text-[hsl(var(--foreground))]">Конверсия домена</p>
             <p className="mt-0.5 text-[12px] text-[hsl(var(--muted))]">
